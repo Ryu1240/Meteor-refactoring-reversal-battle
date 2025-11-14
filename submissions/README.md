@@ -6,13 +6,6 @@
 
 ```
 submissions/
-  participant1/
-    typescript/
-      src/
-        fizzBuzz.ts
-    ruby/
-      src/
-        fizz_buzz.rb
-  participant2/
-    ...
+  [your name]/
+    [copy and paste your code here]
 ```
