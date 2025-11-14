@@ -8,8 +8,22 @@
  *
  * @param n - 処理する最大の数値
  * @returns FizzBuzzルールに従った文字列
+ * @throws {Error} nが負の数、0、NaN、またはInfinityの場合
  */
 export function fizzBuzz(n: number): string {
+  if (isNaN(n)) {
+    throw new Error("nはNaNであってはなりません");
+  }
+  if (!isFinite(n)) {
+    throw new Error("nは有限の数値である必要があります");
+  }
+  if (n <= 0) {
+    throw new Error("nは1以上の整数である必要があります");
+  }
+  if (!Number.isInteger(n)) {
+    throw new Error("nは整数である必要があります");
+  }
+
   if (n % 15 === 0) {
     return "FizzBuzz";
   }

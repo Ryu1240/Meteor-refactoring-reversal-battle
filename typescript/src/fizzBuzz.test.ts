@@ -49,4 +49,26 @@ describe("fizzBuzz", () => {
   it("100を渡すと'Buzz'を返す", () => {
     expect(fizzBuzz(100)).toBe("Buzz");
   });
+
+  it("0を渡すとエラーを発生させる", () => {
+    expect(() => fizzBuzz(0)).toThrow("nは1以上の整数である必要があります");
+  });
+
+  it("負の数を渡すとエラーを発生させる", () => {
+    expect(() => fizzBuzz(-1)).toThrow("nは1以上の整数である必要があります");
+    expect(() => fizzBuzz(-15)).toThrow("nは1以上の整数である必要があります");
+  });
+
+  it("NaNを渡すとエラーを発生させる", () => {
+    expect(() => fizzBuzz(NaN)).toThrow("nはNaNであってはなりません");
+  });
+
+  it("Infinityを渡すとエラーを発生させる", () => {
+    expect(() => fizzBuzz(Infinity)).toThrow("nは有限の数値である必要があります");
+    expect(() => fizzBuzz(-Infinity)).toThrow("nは有限の数値である必要があります");
+  });
+
+  it("浮動小数点数を渡すとエラーを発生させる", () => {
+    expect(() => fizzBuzz(15.5)).toThrow("nは整数である必要があります");
+  });
 });

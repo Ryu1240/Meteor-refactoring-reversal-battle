@@ -51,4 +51,25 @@ class FizzBuzzTest < Minitest::Test
   def test_100を渡すとBuzzを返す
     assert_equal "Buzz", fizz_buzz(100)
   end
+
+  def test_nilを渡すとArgumentErrorを発生させる
+    assert_raises(ArgumentError) { fizz_buzz(nil) }
+  end
+
+  def test_0を渡すとArgumentErrorを発生させる
+    assert_raises(ArgumentError) { fizz_buzz(0) }
+  end
+
+  def test_負の数を渡すとArgumentErrorを発生させる
+    assert_raises(ArgumentError) { fizz_buzz(-1) }
+    assert_raises(ArgumentError) { fizz_buzz(-15) }
+  end
+
+  def test_文字列を渡すとArgumentErrorを発生させる
+    assert_raises(ArgumentError) { fizz_buzz("15") }
+  end
+
+  def test_浮動小数点数を渡すとArgumentErrorを発生させる
+    assert_raises(ArgumentError) { fizz_buzz(15.5) }
+  end
 end
