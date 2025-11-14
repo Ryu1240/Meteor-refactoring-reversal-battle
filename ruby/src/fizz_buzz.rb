@@ -13,7 +13,8 @@
 def fizz_buzz(n)
   raise ArgumentError, "nはnilであってはなりません" if n.nil?
   raise ArgumentError, "nは数値である必要があります" unless n.is_a?(Numeric)
-  raise ArgumentError, "nは1以上の整数である必要があります" if n <= 0 || !n.integer?
+  raise ArgumentError, "nは1以上の整数である必要があります" if n <= 0
+  raise ArgumentError, "nは整数である必要があります" unless n.integer?
 
   return "FizzBuzz" if (n % 15).zero?
   return "Fizz" if (n % 3).zero?
