@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "bit_warizan"
+
 # FizzBuzz関数
 # 1からnまでの数値に対して、以下のルールに従って文字列を返す:
 # - 3の倍数の場合: "Fizz"
@@ -16,9 +18,9 @@ def fizz_buzz(n)
     raise suuti_no_exception unless n.is_a?(Numeric)
     raise n_1ijou if n <= 0
     raise n_seisu unless n.integer?
-    return "FizzBuzz" if (n % 15).zero?
-    return "Fizz" if (n % 3).zero?
-    return "Buzz" if (n % 5).zero?
+    return "FizzBuzz" if bit_warizan(n, 15).zero?
+    return "Fizz" if bit_warizan(n, 3).zero?
+    return "Buzz" if bit_warizan(n, 5).zero?
 
     n.to_s
   rescue => kihon_no_reigai
